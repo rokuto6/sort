@@ -29,8 +29,12 @@ void quick_sort(int A[], int n){
             j++;
         }
         if(A[i] == pivot){
-            swap(A+i, A+eq);
-            swap(A+i, A+j);
+            if(j != eq){
+                swap(A+i, A+eq);
+                swap(A+i, A+j);
+            }else{
+                swap(A+i, A+j);
+            }
             j++;
             eq++;
         }
